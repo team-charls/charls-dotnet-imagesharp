@@ -1,6 +1,6 @@
 <img src="docs/jpeg_ls_logo.png" alt="JPEG-LS Logo" width="100"/>
 
-# CharLS .NET
+# CharLS.Managed.ImageSharp .NET
 
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://github.com/team-charls/charls-dotnet-imagesharp/blob/main/LICENSE.md)
 [![Build and Test](https://github.com/team-charls/charls-dotnet-imagesharp/actions/workflows/dotnet.yml/badge.svg)](https://github.com/team-charls/charls-dotnet-imagesharp/actions/workflows/dotnet.yml)
@@ -8,21 +8,17 @@
 [![NuGet](https://img.shields.io/nuget/v/CharLS.Managed.ImageSharp.svg)](https://www.nuget.org/packages/CharLS.Managed.ImageSharp)
 
 CharLS.Managed.ImageSharp .NET is a JPEG-LS codec plug-in for the SixLabors.ImageSharp 2D graphics library.  
-It adds the ImageSharp required interfaces to the the CharLs.Managed JPEG-LS library allowing to process
+It adds the ImageSharp required interfaces to the the CharLs.Managed JPEG-LS library allowing to load and save
 JPEG-LS files with the ImageSharp graphics library.
 
 ## Remark
 
 This project is under development and not ready for general use.
 
-## Usage
-
-* .NET 8.0 class library.
-* Support for the .NET platforms: Windows, Linux and macOS.
-
 ## How to use
 
-This codec extends the ImageSharp library, the first step is to install that NuGet package. Instructions can be found on the NuGet SixLabors.ImageSharp page: [![NuGet](https://img.shields.io/nuget/v/SixLabors.ImageSharp.svg)](https://www.nuget.org/packages/SixLabors.ImageSharp)
+This codec extends the ImageSharp library, the first step is to install the ImageSharp NuGet package.
+Instructions can be found on the NuGet SixLabors.ImageSharp page: [![NuGet](https://img.shields.io/nuget/v/SixLabors.ImageSharp.svg)](https://www.nuget.org/packages/SixLabors.ImageSharp)
 
 CharLS.Managed.ImageSharp can be added to your C# project using the dotnet command line or the NuGet Package Manager in Visual Studio.
 
@@ -34,7 +30,7 @@ dotnet add package CharLS.Managed.ImageSharp
 
 ### How to use the CharLS.Managed.ImageSharp codec
 
-The code example below shows how to add the codec to ImageSharp and use it:
+The code example below shows how to add the JPEG-LS codec to ImageSharp and use it:
 
 ```cs
 using SixLabors.ImageSharp;
@@ -50,7 +46,7 @@ public void LoadSampleImage()
 }
 ```
 
-Using a separate configuration is required, as ImageSharp comes standard with a JPEG decoder and JPEG-LS also start with the common 2 JPEG bytes.
+Using a separate configuration is required, as ImageSharp comes standard with a JPEG decoder and JPEG-LS files also start with the common 2 JPEG bytes.
 
 A sample application is included in the GitHub repository that demonstrates how to convert common image types like .bmp, .png and .jpg to .jls (JPEG-LS) and vice versa.
 
@@ -59,7 +55,7 @@ A sample application is included in the GitHub repository that demonstrates how 
 * Use Git to get a clone of this repository:  
 
 ```bash
- git clone https://github.com/team-charls/charls-dotnet.git
+ git clone https://github.com/team-charls/charls-dotnet-imagesharp.git
 ```
 
 * Use the .NET 8.0 CLI or Visual Studio 2022 (v17.11 or newer) to build the solution file CharLSDotNet.sln.  
