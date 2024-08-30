@@ -1,0 +1,38 @@
+<!--
+  Copyright (c) Team CharLS.
+  SPDX-License-Identifier: BSD-3-Clause
+-->
+
+<Project>
+  <PropertyGroup>
+    <!-- General -->
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>latest</LangVersion><!-- Use the latest released C# language version -->
+    <Features>strict</Features>
+    <Platforms>AnyCPU</Platforms>
+    <Configurations>Debug;Release</Configurations>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ChecksumAlgorithm>SHA256</ChecksumAlgorithm>    <!-- Use Sha256 for checksums in PDBs (default is SHA1) -->
+    <AccelerateBuildsInVisualStudio>true</AccelerateBuildsInVisualStudio><!-- Enable faster builds in Visual Studio 2022 17.5 and newer. -->
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+
+    <!-- Version information -->
+    <Version>0.8.0</Version>
+    <AssemblyVersion>0.8.0.0</AssemblyVersion>
+    <FileVersion>0.8.0.0</FileVersion>
+    <Copyright>Copyright 2024 Team CharLS</Copyright>
+
+    <!-- Build -->
+    <!-- Build to a folder outside the source folders, making it easier to clean. -->
+    <OutputPath>$(MSBuildThisFileDirectory)build\binaries\$(Configuration)\</OutputPath>
+    <BaseIntermediateOutputPath>$(MSBuildThisFileDirectory)build\intermediates\$(MSBuildProjectName)\</BaseIntermediateOutputPath>
+
+    <!-- Static Analysis -->
+    <!-- <AnalysisLevel>latest-All</AnalysisLevel>
+    <CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors> -->
+  </PropertyGroup>
+</Project>

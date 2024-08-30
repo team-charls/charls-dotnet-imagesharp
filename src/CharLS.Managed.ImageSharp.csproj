@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <!-- Use strong naming -->
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>CharLS.Managed.ImageSharp.KeyPair.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CharLS.Managed" />
+    <PackageReference Include="SixLabors.ImageSharp" />
+  </ItemGroup>
+
+</Project>

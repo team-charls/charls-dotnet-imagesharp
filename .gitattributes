@@ -1,0 +1,23 @@
+# Copyright (c) Team CharLS.
+# SPDX-License-Identifier: BSD-3-Clause
+
+# Set default behavior to automatically normalize line endings.
+* text=auto
+
+# Explicit define text files types.
+*.cs text diff=csharp
+
+# Explicit use CRLF for spell checker exclusion file.
+*.dic text eol=crlf
+
+# Explicit exclude binary files from the line ending normalization.
+*.png binary
+*.jls binary
+*.bmp binary
+*.raw binary
+*.pgm binary
+*.ppm binary
+
+# Export ignore all files that are only needed for git and CI (used when downloading the repository as a zip file).
+.gitattributes export-ignore
+.gitignore export-ignore
