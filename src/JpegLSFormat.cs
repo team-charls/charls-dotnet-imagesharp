@@ -1,7 +1,6 @@
 // Copyright (c) Team CharLS.
 // SPDX-License-Identifier: BSD-3-Clause
 
-using SixLabors.ImageSharp.Formats.Jpeg;
 using SixLabors.ImageSharp.Formats;
 
 namespace CharLS.Managed.ImageSharp;
@@ -9,7 +8,7 @@ namespace CharLS.Managed.ImageSharp;
 /// <summary>
 /// Registers the image encoders, decoders and mime type detectors for the jpeg format.
 /// </summary>
-public sealed class JpegLSFormat : IImageFormat<JpegMetadata>
+public sealed class JpegLSFormat : IImageFormat<JpegLSMetadata>
 {
     private JpegLSFormat()
     {
@@ -33,5 +32,5 @@ public sealed class JpegLSFormat : IImageFormat<JpegMetadata>
     public IEnumerable<string> FileExtensions => JpegLSConstants.FileExtensions;
 
     /// <inheritdoc/>
-    public JpegMetadata CreateDefaultFormatMetadata() => new(); // TODO
+    public JpegLSMetadata CreateDefaultFormatMetadata() => new();
 }

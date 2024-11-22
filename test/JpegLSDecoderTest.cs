@@ -13,14 +13,14 @@ public class JpegLSDecoderTest
     public void DecodeMonochromeImage()
     {
         Configuration configuration = new(new JpegLSConfigurationModule());
-        DecoderOptions options = new DecoderOptions { Configuration = configuration };
-        using Image image = Image.Load(options, "test-images/tulips-gray-8bit-512-512-hp-encoder.jls");
+        var options = new DecoderOptions { Configuration = configuration };
+        using var image = Image.Load(options, "test-images/tulips-gray-8bit-512-512-hp-encoder.jls");
 
         Assert.Equal(512, image.Width);
         Assert.Equal(512, image.Height);
         Assert.Equal(8, image.PixelType.BitsPerPixel);
 
-        using Image expected = Image.Load("test-images/tulips-gray-8bit-512-512.pgm");
+        using var expected = Image.Load("test-images/tulips-gray-8bit-512-512.pgm");
         Compare(expected.CloneAs<L8>(), image.CloneAs<L8>());
     }
 
