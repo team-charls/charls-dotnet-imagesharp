@@ -4,7 +4,7 @@
 
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://github.com/team-charls/charls-dotnet-imagesharp/blob/main/LICENSE.md)
 [![Build and Test](https://github.com/team-charls/charls-dotnet-imagesharp/actions/workflows/dotnet.yml/badge.svg)](https://github.com/team-charls/charls-dotnet-imagesharp/actions/workflows/dotnet.yml)
-[![Coverage Status](https://coveralls.io/repos/github/team-charls/charls-dotnet-imagesharp/badge.svg)](https://coveralls.io/github/team-charls/charls-dotnet-imagesharp)
+[![Coverage Status](https://coveralls.io/repos/github/team-charls/charls-dotnet-imagesharp/badge.svg?kill_cache=1)](https://coveralls.io/github/team-charls/charls-dotnet-imagesharp)
 [![NuGet](https://img.shields.io/nuget/v/CharLS.Managed.ImageSharp.svg)](https://www.nuget.org/packages/CharLS.Managed.ImageSharp)
 
 CharLS.Managed.ImageSharp .NET is a JPEG-LS codec plug-in for the SixLabors.ImageSharp 2D graphics library.  
@@ -58,7 +58,7 @@ A sample application is included in the GitHub repository that demonstrates how 
  git clone https://github.com/team-charls/charls-dotnet-imagesharp.git
 ```
 
-* Use the .NET 8.0 CLI or Visual Studio 2022 (v17.11 or newer) to build the solution file CharLSDotNet.sln.  
+* Use the .NET 9.0 CLI or Visual Studio 2022 (v17.12 or newer) to build the solution file CharLSDotNet.sln.  
  For example: `dotnet build && dotnet test && dotnet publish` to build the NuGet package.  
  Building can be done on all supported .NET SDK platforms: Windows, Linux or macOS
 
