@@ -1,4 +1,4 @@
-﻿// Copyright (c) Team CharLS.
+// Copyright (c) Team CharLS.
 // SPDX-License-Identifier: BSD-3-Clause
 
 using SixLabors.ImageSharp;
@@ -33,9 +33,6 @@ public sealed class JpegLSDecoder : ImageDecoder
     /// <inheritdoc/>
     protected override Image<TPixel> Decode<TPixel>(DecoderOptions options, Stream stream, CancellationToken cancellationToken)
     {
-        //Guard.NotNull(options, nameof(options));
-        //Guard.NotNull(stream, nameof(stream));
-
         JpegLSDecoderCore decoder = new(options);
         Image<TPixel> image = decoder.Decode<TPixel>(stream, cancellationToken);
 
@@ -46,5 +43,16 @@ public sealed class JpegLSDecoder : ImageDecoder
 
     /// <inheritdoc/>
     protected override Image Decode(DecoderOptions options, Stream stream, CancellationToken cancellationToken)
-        => Decode<L8>(options, stream, cancellationToken); // TODO: determine type needed to decode (see PNG method)
+    {
+        JpegLSDecoderCore decoder = new(options);
+        var imageInfo = decoder.Identify(stream, cancellationToken);
+        stream.Position = 0;
+
+        return imageInfo.PixelType.BitsPerPixel switch
+        {
+            8 => Decode<L8>(options, stream, cancellationToken),
+            24 => Decode<Rgb24>(options, stream, cancellationToken),
+            _ => throw new UnknownImageFormatException("Unsupported pixel format.")
+        };
+    }
 }

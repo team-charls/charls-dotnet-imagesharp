@@ -74,6 +74,9 @@
     <None Update="conformance\test16.pgm">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="test-images\2bit_4x1.jls">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="test-images\tulips-gray-8bit-512-512-hp-encoder.jls">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
