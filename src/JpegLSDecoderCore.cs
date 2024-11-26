@@ -26,11 +26,6 @@ internal sealed class JpegLSDecoderCore
     public DecoderOptions Options { get; }
 
     /// <summary>
-    /// Gets or sets the dimensions of the image being decoded.
-    /// </summary>
-    public Size Dimensions { get; set; }
-
-    /// <summary>
     /// Reads the raw image information from the specified stream.
     /// </summary>
     /// <param name="configuration">The shared configuration.</param>
@@ -55,7 +50,7 @@ internal sealed class JpegLSDecoderCore
 
     internal ImageInfo Identify(Stream stream, CancellationToken cancellationToken)
     {
-        using var memoryStream = new MemoryStream(); // TODO optimize (no need to read the complete file)
+        using var memoryStream = new MemoryStream();
         stream.CopyTo(memoryStream);
         memoryStream.ToArray();
         _decoder.Source = memoryStream.ToArray();
@@ -69,7 +64,7 @@ internal sealed class JpegLSDecoderCore
     internal Image<TPixel> Decode<TPixel>(Stream stream, CancellationToken cancellationToken)
         where TPixel : unmanaged, IPixel<TPixel>
     {
-        using var memoryStream = new MemoryStream(); // TODO optimize (no need to read the complete file)
+        using var memoryStream = new MemoryStream();
         stream.CopyTo(memoryStream);
         memoryStream.ToArray();
         _decoder.Source = memoryStream.ToArray();
