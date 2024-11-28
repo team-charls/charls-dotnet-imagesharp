@@ -19,4 +19,13 @@ public class JpegLSConfigurationModuleTest
         Assert.NotNull(imageFormat);
         Assert.Equal(JpegLSFormat.Instance, imageFormat);
     }
+
+    [Fact]
+    public void ConfigureWithNullThrows()
+    {
+        var jpegLsConfigurationModule = new JpegLSConfigurationModule();
+
+        var exception = Assert.Throws<ArgumentNullException>(() => jpegLsConfigurationModule.Configure(null!));
+        Assert.False(string.IsNullOrEmpty(exception.Message));
+    }
 }

@@ -11,9 +11,13 @@ CharLS.Managed.ImageSharp .NET is a JPEG-LS codec plug-in for the SixLabors.Imag
 It adds the ImageSharp required interfaces to the the CharLs.Managed JPEG-LS library allowing to load and save
 JPEG-LS files with the ImageSharp graphics library.
 
-## Remark
+## Features
 
-This project is under development and not ready for general use.
+* .NET 9.0 and .NET 8.0 class library.
+* Support for the .NET platforms: Windows, Linux and macOS.
+* Supports:
+  * Encoding and decoding of 8 bit grayscale images.
+  * Encoding and decoding of 8 bit color (RGB) images in interleave mode Sample.
 
 ## How to use
 
@@ -73,8 +77,8 @@ Instructions:
 * Open a Visual Studio Developer Command Prompt
 * Go the root of the cloned repository
 * Ensure the code signing certificate is available
-* Execute the command `create-signed-nuget-package.cmd certificate-thumb-print time-stamp-url`  
- The certificate thumbprint and time stamp URL arguments are depending on the used code signing certificate.
+* Execute the command `create-signed-nuget-package.cmd certificate-thumb-print certificate-thumb-print-256 time-stamp-url`  
+ The certificate thumbprint (SHA1 and SHA256) and time stamp URL arguments are depending on the used code signing certificate.
 
 All assembly DLLs and the NuGet package itself will be signed.
 

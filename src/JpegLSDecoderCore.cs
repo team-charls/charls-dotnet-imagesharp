@@ -42,7 +42,6 @@ internal sealed class JpegLSDecoderCore
     {
         using var memoryStream = new MemoryStream();
         stream.CopyTo(memoryStream);
-        memoryStream.ToArray();
         _decoder.Source = memoryStream.ToArray();
         _decoder.ReadHeader();
 

@@ -6,7 +6,7 @@ const int failure = 1;
 
 // This sample demonstrates how to convert another encoded image to a JPEG-LS encoded image.
 // The input path should be an absolute path to a file format .NET can read (.bmp, .png, etc.).
-if (!TryParseArguments(args, out string inputPath))
+if (!TryParseArguments(args, out string _))
 {
     Console.WriteLine("Usage: Convert input-image-filename");
     return failure;
@@ -125,7 +125,7 @@ return success;
 //    output.Write(encodedData);
 //}
 
-bool TryParseArguments(IReadOnlyList<string> args, out string inputPathArg)
+static bool TryParseArguments(IReadOnlyList<string> args, out string inputPathArg)
 {
     if (args.Count != 1)
     {
