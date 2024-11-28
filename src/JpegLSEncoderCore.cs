@@ -15,8 +15,8 @@ internal sealed class JpegLSEncoderCore
     {
         cancellationToken.ThrowIfCancellationRequested();
 
-        var frameInfo = new FrameInfo(image.Width, image.Height, 8, 1);
-        var encoder = new Managed.JpegLSEncoder(frameInfo);
+        var frameInfo = new FrameInfo(image.Width, image.Height, 8, GetComponentCount(image));
+        var encoder = new Managed.JpegLSEncoder(frameInfo) { InterleaveMode = GetInterleaveMode(image) };
 
         Buffer2D<TPixel> pixels = image.Frames.RootFrame.PixelBuffer;
         Span<byte> sourceInBytes = MemoryMarshal.Cast<TPixel, byte>(pixels.MemoryGroup[0].Span);
@@ -24,4 +24,19 @@ internal sealed class JpegLSEncoderCore
 
         stream.Write(encoder.EncodedData.Span);
     }
+
+    private static int GetComponentCount(Image image)
+        => image.PixelType.BitsPerPixel switch
+        {
+            8 => 1,
+            24 => 3,
+            _ => throw new UnknownImageFormatException("Unsupported pixel format."),
+        };
+
+    private static InterleaveMode GetInterleaveMode(Image image)
+    => image.PixelType.BitsPerPixel switch
+    {
+        24 => InterleaveMode.Sample,
+        _ => InterleaveMode.None,
+    };
 }

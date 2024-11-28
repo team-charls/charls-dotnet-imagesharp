@@ -27,14 +27,14 @@ public sealed class JpegLSDecoder : ImageDecoder
         ArgumentNullException.ThrowIfNull(options, nameof(options));
         ArgumentNullException.ThrowIfNull(stream, nameof(stream));
 
-        return new JpegLSDecoderCore(options).Identify(options.Configuration, stream, cancellationToken);
+        return new JpegLSDecoderCore(options).Identify(stream);
     }
 
     /// <inheritdoc/>
     protected override Image<TPixel> Decode<TPixel>(DecoderOptions options, Stream stream, CancellationToken cancellationToken)
     {
         JpegLSDecoderCore decoder = new(options);
-        Image<TPixel> image = decoder.Decode<TPixel>(stream, cancellationToken);
+        Image<TPixel> image = decoder.Decode<TPixel>(stream);
 
         ScaleToTargetSize(options, image);
 
@@ -45,7 +45,7 @@ public sealed class JpegLSDecoder : ImageDecoder
     protected override Image Decode(DecoderOptions options, Stream stream, CancellationToken cancellationToken)
     {
         JpegLSDecoderCore decoder = new(options);
-        var imageInfo = decoder.Identify(stream, cancellationToken);
+        var imageInfo = decoder.Identify(stream);
         stream.Position = 0;
 
         return imageInfo.PixelType.BitsPerPixel switch
