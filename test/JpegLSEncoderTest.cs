@@ -1,8 +1,6 @@
 // Copyright (c) Team CharLS.
 // SPDX-License-Identifier: BSD-3-Clause
 
-using System.IO;
-using System.Text;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
 
@@ -23,6 +21,34 @@ public class JpegLSEncoderTest
 
         var expected = File.ReadAllBytes("test-images/tulips-gray-8bit-512-512-hp-encoder.jls");
         Compare(expected, memoryStream.ToArray());
+    }
+
+    [Fact]
+    public void EncodeColorByPixelImage()
+    {
+        using Image image = Image.Load("conformance/test8.ppm").CloneAs<Rgb24>();
+
+        using var memoryStream = new MemoryStream();
+        Configuration configuration = new(new JpegLSConfigurationModule());
+        var encoder = configuration.ImageFormatsManager.GetEncoder(JpegLSFormat.Instance);
+
+        image.Save(memoryStream, encoder);
+
+        var expected = File.ReadAllBytes("conformance/t8c2e0.jls");
+        Compare(expected, memoryStream.ToArray());
+    }
+
+    [Fact]
+    public void UnsupportedEncodeThrows()
+    {
+        using Image image = Image.Load("conformance/test8.ppm").CloneAs<Rgba1010102>();
+
+        using var memoryStream = new MemoryStream();
+        Configuration configuration = new(new JpegLSConfigurationModule());
+        var encoder = configuration.ImageFormatsManager.GetEncoder(JpegLSFormat.Instance);
+
+        var exception = Assert.Throws<UnknownImageFormatException>(() => image.Save(memoryStream, encoder));
+        Assert.False(string.IsNullOrEmpty(exception.Message));
     }
 
     [Fact]
