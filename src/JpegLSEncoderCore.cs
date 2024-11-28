@@ -8,7 +8,7 @@ using SixLabors.ImageSharp.PixelFormats;
 
 namespace CharLS.Managed.ImageSharp;
 
-internal sealed class JpegLSEncoderCore
+internal static class JpegLSEncoderCore
 {
     internal static void Encode<TPixel>(Image<TPixel> image, Stream stream, CancellationToken cancellationToken)
         where TPixel : unmanaged, IPixel<TPixel>

@@ -33,6 +33,8 @@ public sealed class JpegLSDecoder : ImageDecoder
     /// <inheritdoc/>
     protected override Image<TPixel> Decode<TPixel>(DecoderOptions options, Stream stream, CancellationToken cancellationToken)
     {
+        ArgumentNullException.ThrowIfNull(stream);
+
         JpegLSDecoderCore decoder = new(options);
         Image<TPixel> image = decoder.Decode<TPixel>(stream);
 
@@ -44,6 +46,8 @@ public sealed class JpegLSDecoder : ImageDecoder
     /// <inheritdoc/>
     protected override Image Decode(DecoderOptions options, Stream stream, CancellationToken cancellationToken)
     {
+        ArgumentNullException.ThrowIfNull(stream);
+
         JpegLSDecoderCore decoder = new(options);
         var imageInfo = decoder.Identify(stream);
         stream.Position = 0;

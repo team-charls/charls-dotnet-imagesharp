@@ -6,7 +6,7 @@
 <Project>
   <PropertyGroup>
     <!-- General -->
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFrameworks>net8.0;net9.0</TargetFrameworks>
     <LangVersion>latest</LangVersion><!-- Use the latest released C# language version -->
     <Features>strict</Features>
     <Platforms>AnyCPU</Platforms>
@@ -19,9 +19,9 @@
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
 
     <!-- Version information -->
-    <Version>0.8.0</Version>
-    <AssemblyVersion>0.8.0.0</AssemblyVersion>
-    <FileVersion>0.8.0.0</FileVersion>
+    <Version>0.4.0</Version>
+    <AssemblyVersion>0.4.0.0</AssemblyVersion>
+    <FileVersion>0.4.0.0</FileVersion>
     <Copyright>Copyright 2024 Team CharLS</Copyright>
 
     <!-- Build -->
@@ -30,9 +30,10 @@
     <BaseIntermediateOutputPath>$(MSBuildThisFileDirectory)build\intermediates\$(MSBuildProjectName)\</BaseIntermediateOutputPath>
 
     <!-- Static Analysis -->
-    <!-- <AnalysisLevel>latest-All</AnalysisLevel>
+    <AnalysisLevel>latest-All</AnalysisLevel>
+    <AnalysisMode>AllEnabledByDefault</AnalysisMode><!-- Enable all CAxxx code quality rules -->
     <CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors> -->
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
 </Project>

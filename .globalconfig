@@ -1,0 +1,14 @@
+# Copyright (c) Team CharLS.
+# SPDX-License-Identifier: BSD-3-Clause
+
+# The following configuration settings are used to control the build-in .NET analyzer in the C# compiler (Roslyn).
+# All warnings are by default enabled in the projects.
+# Some warnings type are however to noisy and not effective and globally disabled.
+is_global = true
+
+# Default severity for analyzer diagnostics
+dotnet_analyzer_diagnostic.severity = error
+
+# CA1303: literal string used instead of string from resource
+# Rational: Only English is used, no support for other languages by design.
+dotnet_diagnostic.CA1303.severity = none

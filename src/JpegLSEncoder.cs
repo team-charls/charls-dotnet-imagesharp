@@ -12,6 +12,11 @@ namespace CharLS.Managed.ImageSharp;
 public sealed class JpegLSEncoder : ImageEncoder
 {
     /// <inheritdoc/>
-    protected override void Encode<TPixel>(Image<TPixel> image, Stream stream, CancellationToken cancellationToken) =>
+    protected override void Encode<TPixel>(Image<TPixel> image, Stream stream, CancellationToken cancellationToken)
+    {
+        ArgumentNullException.ThrowIfNull(image);
+        ArgumentNullException.ThrowIfNull(stream);
+
         JpegLSEncoderCore.Encode(image, stream, cancellationToken);
+    }
 }

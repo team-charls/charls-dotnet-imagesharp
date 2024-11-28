@@ -12,9 +12,9 @@ public class JpegLSFormatTest
 
         Assert.Equal("JPEG-LS", imageFormat.Name);
         Assert.Equal("image/jls", imageFormat.DefaultMimeType);
-        Assert.Single(imageFormat.MimeTypes);
+        _ = Assert.Single(imageFormat.MimeTypes);
         Assert.Equal("image/jls", imageFormat.MimeTypes.First());
-        Assert.Single(imageFormat.FileExtensions);
+        _ = Assert.Single(imageFormat.FileExtensions);
         Assert.Equal("jls", imageFormat.FileExtensions.First());
 
         Assert.NotNull(imageFormat.CreateDefaultFormatMetadata());
