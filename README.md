@@ -1,3 +1,8 @@
+<!--
+  SPDX-FileCopyrightText: © 2024 Team CharLS
+  SPDX-License-Identifier: BSD-3-Clause
+-->
+
 <img src="docs/jpeg_ls_logo.png" alt="JPEG-LS Logo" width="100"/>
 
 # CharLS.Managed.ImageSharp .NET
