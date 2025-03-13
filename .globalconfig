@@ -12,3 +12,6 @@ dotnet_analyzer_diagnostic.severity = error
 # CA1303: literal string used instead of string from resource
 # Rational: Only English is used, no support for other languages by design.
 dotnet_diagnostic.CA1303.severity = none
+
+# Consider making public types internal (false positives for xUnit test classes)
+dotnet_diagnostic.CA1515.severity = none

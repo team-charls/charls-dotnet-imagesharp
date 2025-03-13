@@ -15,7 +15,6 @@ path = [
     "**.json",
     "exclusion.dic",
     "default.ruleset",
-    "CharLS.Managed.ImageSharp.sln",
     "CharLS.Managed.ImageSharp.sln.DotSettings",
     ".github/workflows/coverlet.runsettings",
     "nuget.config",
