@@ -1,12 +1,12 @@
 <!--
-  Copyright (c) Team CharLS.
+  SPDX-FileCopyrightText: © 2024 Team CharLS
   SPDX-License-Identifier: BSD-3-Clause
 -->
 <Project>
   <ItemGroup>
     <PackageVersion Include="CharLS.Managed" Version="0.8.0" />
     <PackageVersion Include="coverlet.collector" Version="6.0.4" />
-    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.13.0" />
     <PackageVersion Include="SixLabors.ImageSharp" Version="3.1.7" />
     <PackageVersion Include="StyleCop.Analyzers" Version="1.2.0-beta.556" />
     <PackageVersion Include="xunit" Version="2.9.3" />
