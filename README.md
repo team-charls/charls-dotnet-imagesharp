@@ -8,6 +8,7 @@
 # CharLS.Managed.ImageSharp .NET
 
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://github.com/team-charls/charls-dotnet-imagesharp/blob/main/LICENSE.md)
+[![REUSE status](https://api.reuse.software/badge/github.com/team-charls/charls-dotnet-imagesharp)](https://api.reuse.software/info/github.com/team-charls/charls-dotnet-imagesharp)
 [![Build and Test](https://github.com/team-charls/charls-dotnet-imagesharp/actions/workflows/dotnet.yml/badge.svg)](https://github.com/team-charls/charls-dotnet-imagesharp/actions/workflows/dotnet.yml)
 [![Coverage Status](https://coveralls.io/repos/github/team-charls/charls-dotnet-imagesharp/badge.svg?kill_cache=1)](https://coveralls.io/github/team-charls/charls-dotnet-imagesharp)
 [![NuGet](https://img.shields.io/nuget/v/CharLS.Managed.ImageSharp.svg)](https://www.nuget.org/packages/CharLS.Managed.ImageSharp)
