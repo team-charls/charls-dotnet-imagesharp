@@ -1,2 +1,3 @@
-0.4.0
- - Initial release
+0.4.1
+ - Updated referenced NuGet packages.
+ - Added support for AOT compilation.

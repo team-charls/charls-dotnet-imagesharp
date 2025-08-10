@@ -9,6 +9,7 @@
     <!-- Use strong naming -->
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>CharLS.Managed.ImageSharp.KeyPair.snk</AssemblyOriginatorKeyFile>
+    <IsAotCompatible>true</IsAotCompatible>
 
     <!-- Configure NuGet package settings  -->
     <Company>Team CharLS</Company>

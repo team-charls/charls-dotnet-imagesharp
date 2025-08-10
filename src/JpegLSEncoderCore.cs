@@ -1,4 +1,4 @@
-// Copyright (c) Team CharLS.
+// SPDX-FileCopyrightText: © 2024 Team CharLS
 // SPDX-License-Identifier: BSD-3-Clause
 
 using System.Runtime.InteropServices;
@@ -30,13 +30,13 @@ internal static class JpegLSEncoderCore
         {
             8 => 1,
             24 => 3,
-            _ => throw new UnknownImageFormatException("Unsupported pixel format."),
+            _ => throw new UnknownImageFormatException("Unsupported pixel format.")
         };
 
     private static InterleaveMode GetInterleaveMode(Image image)
     => image.PixelType.BitsPerPixel switch
     {
         24 => InterleaveMode.Sample,
-        _ => InterleaveMode.None,
+        _ => InterleaveMode.None
     };
 }
