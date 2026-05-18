@@ -57,6 +57,9 @@
 
     <Message Text="Signing CharLS.Managed.ImageSharp.dll (.NET 9.0)" />
     <SignFile CertificateThumbprint="$(_CertificateThumbprint)" TimestampUrl="$(_TimestampUrl)" SigningTarget="$(OutputPath)..\$(Configuration)_net9.0\CharLS.Managed.ImageSharp.dll" TargetFrameworkVersion="v4.5" />
+
+    <Message Text="Signing CharLS.Managed.ImageSharp.dll (.NET 10.0)" />
+    <SignFile CertificateThumbprint="$(_CertificateThumbprint)" TimestampUrl="$(_TimestampUrl)" SigningTarget="$(OutputPath)..\$(Configuration)_net10.0\CharLS.Managed.ImageSharp.dll" TargetFrameworkVersion="v4.5" />
   </Target>
 
   <Target Name="SignPackage" AfterTargets="Pack" Condition="'$(MSBuildRuntimeType)'=='Full'">
