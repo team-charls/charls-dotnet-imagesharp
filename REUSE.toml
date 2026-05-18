@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: © 2024 Team CharLS
 # SPDX-License-Identifier: BSD-3-Clause
 
-# This is a configuration file for the reuse lint tool. It allows specifing license info
+# This is a configuration file for the reuse lint tool. It allows specifying license info
 # for files that cannot be extended with such info.
 
 version = 1
@@ -19,7 +19,8 @@ path = [
     ".github/workflows/coverlet.runsettings",
     "nuget.config",
      "src/CharLS.Managed.ImageSharp.KeyPair.snk",
-     "src/nuget-release-notes.txt"
+     "src/nuget-release-notes.txt",
+     "sixlabors.lic"
 ]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "© 2024 Team CharLS"
