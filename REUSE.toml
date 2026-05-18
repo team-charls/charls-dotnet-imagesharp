@@ -20,7 +20,7 @@ path = [
     "nuget.config",
      "src/CharLS.Managed.ImageSharp.KeyPair.snk",
      "src/nuget-release-notes.txt",
-     "sixlabors.lic"
+     "src/sixlabors.lic"
 ]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "© 2024 Team CharLS"
