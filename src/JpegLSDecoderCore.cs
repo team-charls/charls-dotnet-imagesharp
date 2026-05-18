@@ -27,9 +27,13 @@ internal sealed class JpegLSDecoderCore
             _decoder.Source = memoryStream.ToArray();
             _decoder.ReadHeader();
 
+            var metadata = new ImageMetadata();
+            var formatMetadata = metadata.GetFormatMetadata(JpegLSFormat.Instance);
             var frameInfo = _decoder.FrameInfo;
-            return new ImageInfo(new PixelTypeInfo(frameInfo.BitsPerSample * frameInfo.ComponentCount),
-                new Size(frameInfo.Width, frameInfo.Height), new ImageMetadata());
+            formatMetadata.BitsPerSample = frameInfo.BitsPerSample;
+            formatMetadata.ComponentCount = frameInfo.ComponentCount;
+
+            return new ImageInfo(new Size(frameInfo.Width, frameInfo.Height), metadata);
         }
         catch (InvalidDataException e)
         {

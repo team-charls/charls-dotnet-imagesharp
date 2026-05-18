@@ -14,13 +14,12 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <ChecksumAlgorithm>SHA256</ChecksumAlgorithm>    <!-- Use Sha256 for checksums in PDBs (default is SHA1) -->
-    <AccelerateBuildsInVisualStudio>true</AccelerateBuildsInVisualStudio><!-- Enable faster builds in Visual Studio 2022 17.5 and newer. -->
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
 
     <!-- Version information -->
     <Version>0.5.0</Version>
-    <AssemblyVersion>0.4.0.0</AssemblyVersion>
+    <AssemblyVersion>0.5.0.0</AssemblyVersion>
     <FileVersion>0.5.0.0</FileVersion>
     <Copyright>Copyright 2024 Team CharLS</Copyright>
 
