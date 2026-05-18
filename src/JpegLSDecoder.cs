@@ -8,7 +8,7 @@ using SixLabors.ImageSharp.PixelFormats;
 namespace CharLS.Managed.ImageSharp;
 
 /// <summary>
-/// Decoder for generating an image out of a gif encoded stream.
+/// Decoder for generating an image out of a JPEG-LS encoded stream.
 /// </summary>
 public sealed class JpegLSDecoder : ImageDecoder
 {
@@ -48,8 +48,7 @@ public sealed class JpegLSDecoder : ImageDecoder
     {
         ArgumentNullException.ThrowIfNull(stream);
 
-        JpegLSDecoderCore decoder = new(options);
-        var imageInfo = decoder.Identify(stream);
+        var imageInfo = Instance.IdentifyAsync(options, stream, cancellationToken).Result;
         stream.Position = 0;
 
         return imageInfo.PixelType.BitsPerPixel switch

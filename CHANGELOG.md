@@ -14,6 +14,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Changed
 
 - Updated configuration to build with .NET SDK 10.0
+- Updated SixLabors.ImageSharp to v4.0.0.  
 
 ### Added
 

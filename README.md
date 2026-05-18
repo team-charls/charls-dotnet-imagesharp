@@ -19,7 +19,7 @@ JPEG-LS files with the ImageSharp graphics library.
 
 ## Features
 
-* .NET 9.0 and .NET 8.0 class library.
+* .NET 10.0, .NET 9.0 and .NET 8.0 class library.
 * Support for the .NET platforms: Windows, Linux and macOS.
 * Supports:
   * Encoding and decoding of 8 bit grayscale images.
@@ -68,7 +68,7 @@ A sample application is included in the GitHub repository that demonstrates how 
  git clone https://github.com/team-charls/charls-dotnet-imagesharp.git
 ```
 
-* Use the .NET 9.0 CLI or Visual Studio 2022 (v17.14 or newer) to build the solution file CharLSDotNet.slnx.  
+* Use the .NET 10.0 CLI or Visual Studio 2026 (v18.6 or newer) to build the solution file CharLS.Managed.ImageSharp.slnx.  
  For example: `dotnet build && dotnet test && dotnet publish` to build the NuGet package.  
  Building can be done on all supported .NET SDK platforms: Windows, Linux or macOS
 
