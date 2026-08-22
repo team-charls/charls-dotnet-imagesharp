@@ -1,0 +1,12 @@
+{
+  "platformOptions": {
+    "exitProcessOnUnhandledException": true
+  },
+  "extensions": {
+    "codeCoverage": {
+      "outputFormat": "cobertura",
+      "include": [ "[CharLS.Managed.ImageSharp]*" ],
+      "exclude": [ "[*.Test]*" ]
+    }
+  }
+}
