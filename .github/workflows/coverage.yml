@@ -78,14 +78,13 @@ jobs:
     - name: Build
       run: dotnet build --no-restore -c Release
 
-    # Add coverlet.collector nuget package to test project - 'dotnet add <TestProject.cspoj> package coverlet
     - name: Test
-      run: dotnet test --no-build -c Release --verbosity normal --collect:"XPlat Code Coverage" --logger trx --results-directory coverage --settings .github/workflows/coverlet.runsettings
+      run: dotnet test --no-build -c Release --verbosity normal --coverage --coverage-output-format cobertura --report-trx --results-directory coverage
 
     - name: Create code coverage report
       run: |
         dotnet tool install -g dotnet-reportgenerator-globaltool
-        reportgenerator -reports:coverage/*/coverage.cobertura.xml -targetdir:CodeCoverage -reporttypes:'MarkdownSummaryGithub;Cobertura'
+        reportgenerator -reports:coverage/*.cobertura.xml -targetdir:CodeCoverage -reporttypes:'MarkdownSummaryGithub;Cobertura'
 
     - name: Write to Job Summary
       run: cat CodeCoverage/SummaryGithub.md >> $GITHUB_STEP_SUMMARY
